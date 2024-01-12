@@ -1,7 +1,8 @@
-const {When, Then} = require('@cucumber/cucumber');
+const {When, Then, setDefaultTimeout} = require('@cucumber/cucumber');
 const { LoginPage } = require('../pages/LoginPage');
 
 let lp =new LoginPage();
+setDefaultTimeout(60 * 1000);
 
 When('User is on  login page',async()=>{
     await lp.navigate();
